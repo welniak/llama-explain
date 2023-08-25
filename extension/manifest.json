@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "llama explain",
+  "version": "1.0",
+  "description": "Get an explanation from a llama (or another local LLM) about the selected text on a website, ELI5 style. All local.",
+  "permissions": ["contextMenus", "windows", "storage"],
+  "host_permissions": ["http://localhost:11434/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "img/llama_128.png"
+  }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>llama explain</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <h1>llama explain</h1>
+    <label for="dropdown">Choose the model to use:
+        <span id="infoIcon"
+            data-tooltip="This is where your explanation about the different model options will go.">?</span>
+        <div id="modelExplanationDiv">
+            If if takes a long time to generate an explanation on your machine, try choosing the smaller model (e.g. :7b
+            model is smaller than the :13b model). Note that the quality of the explanation will likely be worse when
+            using a smaller model.
+        </div>
+    </label>
+    <select id="dropdown"></select>
+    <script src="ollama.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

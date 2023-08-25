@@ -1,0 +1,44 @@
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+}
+
+h2 {
+  border-bottom: 2px solid #666;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#explanationDiv {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spinner {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 5px solid #333;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
