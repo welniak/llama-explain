@@ -14,6 +14,12 @@ When using the installation script:
 When installing manually:
 - [Ollama](https://github.com/jmorganca/ollama)
 
+You need to make sure that Ollama is running for the extension to work. In case the extension does not show any models in the model selection view, run the following command:
+
+```bash
+ollama serve
+```
+
 # Set up
 You can install the extension directly from the store (coming soon) or [load the unpacked extension in your browser](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked) (the extension directory).
 
