@@ -47,8 +47,8 @@ If you opt for not using the setup script, you can perform all the steps manuall
 2. Set the `OLLAMA_ORIGINS` environment variable to `"chrome-extension://*"`. This is needed to allow the extension to communicate with Ollama
 3. Create the Ollama models based on the provided Modelfiles. Run:
    ```bash
-   ollama create llama-explain-llama2:13b -f ../modfiles/llama-explain-llama2-13b-modifle
-   ollama create llama-explain-llama2:7b -f ../modfiles/llama-explain-llama2-7b-modifle
+   ollama create llama-explain-llama2:13b -f ../modelfile/llama-explain-llama2-13b-modelfile
+   ollama create llama-explain-llama2:7b -f ../modelfile/llama-explain-llama2-7b-modelfile
    ```
 
    from inside of the `modelfile` directory.

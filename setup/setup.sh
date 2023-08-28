@@ -52,6 +52,6 @@ echo "OLLAMA_ORIGINS set for $USER using $SHELL"
 
 # Create the llama explain ollama models
 ollama serve &
-ollama create llama-explain-llama2:13b -f ../modfiles/llama-explain-llama2-13b-modifle
-ollama create llama-explain-llama2:7b -f ../modfiles/llama-explain-llama2-7b-modifle
+ollama create llama-explain-llama2:13b -f ../modelfile/llama-explain-llama2-13b-modelfile
+ollama create llama-explain-llama2:7b -f ../modelfile/llama-explain-llama2-7b-modelfile
 
