@@ -1,5 +1,5 @@
 # About
-llama explain is a Chrome extension that explains complex text online in simple terms, by using a local-running LLM. All is done locally on your machine, no data is sent to OpenAI's, or any other company's, server.
+llama explain is a Chrome extension that explains complex text online in simple terms, by using a local-running LLM. All is done locally on your machine. No data is sent to OpenAI's, or any other company's, server. No need to pay for any service.
 
 It's built on top of [Ollama](https://github.com/jmorganca/ollama) and as such, currently runs only on MacOS.
 
