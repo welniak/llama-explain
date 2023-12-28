@@ -1,24 +1,43 @@
 importScripts("ollama.js")
+importScripts("marked.min.js")
 
 const CONTEXT_MENU_ID = "LLAMA_EXPLAIN"
+const CONTEXT_EXPLAIN_MENU_ID = CONTEXT_MENU_ID + "_EXPLAIN"
+const CONTEXT_SUMMARIZE_MENU_ID = CONTEXT_MENU_ID + "_SUMMARIZE"
 
 let popupWindowId
 let popupTabId
 
-chrome.contextMenus.create({
-    "id": CONTEXT_MENU_ID,
-    "title": "llama explain",
-    "contexts": ["selection"]
-})
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.contextMenus.create({
+        "id": CONTEXT_MENU_ID,
+        "title": "llama explain",
+        "contexts": ["selection"]
+    })
+
+    chrome.contextMenus.create({
+        "id": CONTEXT_EXPLAIN_MENU_ID,
+        "parentId": CONTEXT_MENU_ID,
+        "title": "Explain this:",
+        "contexts": ["selection"]
+    })
+
+    chrome.contextMenus.create({
+        "id": CONTEXT_SUMMARIZE_MENU_ID,
+        "parentId": CONTEXT_MENU_ID,
+        "title": "Summarize this:",
+        "contexts": ["selection"]
+    })
+});
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    if (info.menuItemId === CONTEXT_MENU_ID) {
+    if (info.menuItemId === CONTEXT_EXPLAIN_MENU_ID || info.menuItemId === CONTEXT_SUMMARIZE_MENU_ID) {
         getSelectedModelName(function (selectedModelName) {
             openOrFocusPopup()
             clearPreviousOutput()
             streamInferredResponse(
                 selectedModelName,
-                info.selectionText,
+                info.title + " " + info.selectionText,
                 sendResponseToPopUp
             )
         })
@@ -37,7 +56,7 @@ function getSelectedModelName(onModelNameLoaded) {
 
 function fetchFirstAvailableModel(onModelNameLoaded) {
     getModelList(function (modelList) {
-        onModelNameLoaded(modelList.filter(model => model.name.includes('llama-explain'))[0].name)
+        onModelNameLoaded(modelList[0].name)
     })
 }
 

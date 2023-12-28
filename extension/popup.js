@@ -17,10 +17,9 @@ document.getElementById('infoIcon').addEventListener('click', function () {
 
 function showModelList(modelList) {
 	const dropdown = document.getElementById('dropdown')
-	const llamaExplainModels = modelList.filter(model => model.name.includes('llama-explain'))
 
-	getSavedModelNameOrDefault(llamaExplainModels, function (savedModelName) {
-		llamaExplainModels.forEach(model => {
+	getSavedModelNameOrDefault(modelList, function (savedModelName) {
+		modelList.forEach(model => {
 			const option = document.createElement('option')
 			option.value = model.name
 			option.textContent = model.name
