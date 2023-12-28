@@ -14,6 +14,8 @@ function onClear() {
 }
 
 function clearResponse() {
+	beforeParsing = ""
+	markdowned = ""
 	explanationSpan().textContent = ""
 }
 
@@ -31,9 +33,14 @@ function hideLoadingSpinner() {
 }
 
 function addToResponse(responseToken) {
-	explanationSpan().textContent += responseToken
+	beforeParsing += responseToken;
+	markdowned = marked.parse(beforeParsing)
+	explanationSpan().innerHTML = markdowned
 }
 
 const explanationSpan = () => document.getElementById('explanationSpan')
 
 const loadingSpinner = () => document.getElementById('loadingSpinner')
+
+let beforeParsing = ""
+let markdowned = ""
